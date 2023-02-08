@@ -2,10 +2,9 @@ import React, { useContext } from 'react'
 import Context from '../Context/Context'
 import Productlist from './Productlist';
 
-function Produce() {
-    const data=useContext(Context);
+function Produce({pro}) {
   return (
-    <div>
+    <div ref={pro}>
       <h2 style={{fontFamily:'Muli'}}>Produce &#62;</h2>
       <Productlist/>
     </div>

@@ -1,9 +1,9 @@
 import React from 'react'
 import Productlist from './Productlist'
 
-function Frozen() {
+function Frozen({frozen}) {
   return (
-    <div><h2 style={{fontFamily:'Muli'}}>Frozen &#62;</h2>
+    <div ref={frozen}><h2 style={{fontFamily:'Muli'}}>Frozen &#62;</h2>
       <Productlist/>
     </div>
   )

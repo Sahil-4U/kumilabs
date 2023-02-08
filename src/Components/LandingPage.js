@@ -1,4 +1,5 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
+import {BrowserRouter} from 'react-router-dom'
 import './LandingPage.css';
 import Context from './Context/Context';
 import banana from '../images/banana.png';
@@ -11,26 +12,17 @@ import Navbar from './SubComponents/Navbar';
 import Products from './SubComponents/Products';
 
 function LandingPage() {
-    const data=[
-        {
-            id:'1',
-            src:banana,
-            iden:'Banana 1 ct',
-            price:'$ 0.69',
-            energy:'18 oz'
-        }
-    ]
     return (
-        <Context.Provider value={data}>
+        <BrowserRouter>
         <div className='LandingPageContainer'>
             <div className='NavbarContainer'>
             <Navbar />
             </div>
             <div className='ProductContainer'>
-            <Products />
+            <Products/>
             </div>
         </div>
-        </Context.Provider>
+        </BrowserRouter>
     )
 }
 

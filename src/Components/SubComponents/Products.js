@@ -13,6 +13,7 @@ import Canned from './Canned';
 import Frozen from './Frozen';
 import Prepared from './Prepared';
 import Bakery from './Bakery';
+import { Link } from 'react-router-dom';
 
 
 const Products = () => {
@@ -26,25 +27,26 @@ const Products = () => {
 
 
     const handleProduce = ()=>{
-        pro.current?.scrollIntoView({behaviour:'smooth'});
+        pro.current.scrollIntoView({behaviour:'smooth'});
     }
     const handleDairy = ()=>{
-        dairy.current?.scrollIntoView({behaviour:'smooth'});
+        dairy.current.scrollIntoView({behaviour:'smooth'});
     }
     const handleMeat = ()=>{
-        meat.current?.scrollIntoView({behaviour:'smooth'});
+        meat.current.scrollIntoView({behaviour:'smooth'});
     }
     const handleCanned = ()=>{
-        canned.current?.scrollIntoView({behaviour:'smooth'});
+        canned.current.scrollIntoView({behaviour:'smooth'});
     }
     const handleFrozen = ()=>{
-        frozen.current?.scrollIntoView({behaviour:'smooth'});
+        // console.log(frozen.current)
+        frozen.current.scrollIntoView({behaviour:'smooth'});
     }
     const handlePrepare = ()=>{
-        prepare.current?.scrollIntoView({behaviour:'smooth'});
+        prepare.current.scrollIntoView({behaviour:'smooth'});
     }
     const handleBakery = ()=>{
-        bakery.current?.scrollIntoView({behaviour:'smooth'});
+        bakery.current.scrollIntoView({behaviour:'smooth'});
     }
     return (
         <div className='ProductsContainer'>
@@ -99,7 +101,7 @@ const Products = () => {
                 </div>
                 <div>
                     <img src={vec2} className='mobileView' alt='img' />
-                    <Button variant="primary" onClick={handleFrozen}>Frozen</Button>{' '}
+                    <Button variant="primary" onClick={()=>handleFrozen()}>Frozen</Button>{' '}
                 </div>
                 <div>
                     <img src={vec3} className='mobileView' alt='img' />
@@ -115,24 +117,30 @@ const Products = () => {
                 </div>
 
 
-
+                {/* const pro = useRef(null);
+    const dairy = useRef(null);
+    const meat = useRef(null);
+    const canned = useRef(null);
+    const frozen = useRef(null);
+    const prepare = useRef(null);
+    const bakery = useRef(null); */}
 
             </div>
             <div className='allElements'>
-                <Produce />
-                <Prepared />
-                <Canned />
-                <Produce />
-                <Bakery />
-                <Dairy />
-                <Frozen />
-                <Meat />
-                <Dairy />
-                <Bakery />
-                <Dairy />
-                <Prepared />
-                <Canned />
-                <Produce />
+                <Produce pro={pro}/>
+                <Prepared prepare={prepare}/>
+                <Canned canned={canned}/>
+                <Produce pro={pro}/>
+                <Bakery bakery={bakery}/>
+                <Dairy dairy={dairy}/>
+                <Frozen frozen={frozen}/>
+                <Meat meat={meat}/>
+                <Dairy dairy={dairy}/>
+                <Bakery bakery={bakery}/>
+                <Dairy dairy={dairy}/>
+                <Prepared prepare={prepare}/>
+                <Canned canned={canned}/>
+                <Produce pro={pro}/>
             </div>
         </div>
     );

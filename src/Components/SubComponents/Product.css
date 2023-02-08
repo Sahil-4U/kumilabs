@@ -65,7 +65,7 @@ button {
   font-size: inherit;
 }
 
-button:focus {
+button:focus{
   background-color: rgb(135, 215, 255);
   color: white;
 }

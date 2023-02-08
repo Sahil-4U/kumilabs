@@ -1,9 +1,9 @@
 import React from 'react'
 import Productlist from './Productlist'
 
-function Prepared() {
+function Prepared({prepare}) {
   return (
-    <div><h2 style={{fontFamily:'Muli'}}>
+    <div ref={prepare}><h2 style={{fontFamily:'Muli'}}>
       Prepared &#62;
       </h2>
       <Productlist/>
